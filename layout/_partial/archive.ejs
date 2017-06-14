@@ -1,0 +1,52 @@
+<%
+   var ps = page.posts.toArray();
+%>
+<!-- Featured Post -->
+<article class="post featured">
+    <header class="major">
+        <span class="date"><%- ps[0].date.format(theme.date_format) %></span>
+
+        <h2><a href="<%- url_for(ps[0].path) %>"><%- ps[0].title || theme.unnamed %></a></h2>
+        <p><span><%- ps[0].digest || ps[0].excerpt || '' %></span></p>
+    </header>
+    <a href="<%- url_for(ps[0].path) %>" class="image main">
+        <% if (ps[0].cover) { %>
+        <img src="<%- ps[0].cover %>" alt="" />
+        <% } %>
+    </a>
+    <ul class="actions">
+        <li><a href="<%- url_for(ps[0].path) %>" class="button big">Full <%- ps[0].classify || 'article' %></a></li>
+    </ul>
+</article>
+
+<!-- Posts -->
+<section class="posts">
+    <%for (var i = 1; i < ps.length; i++) { %>
+    <article>
+        <header>
+            <span class="date"><%- ps[i].date.format(theme.date_format) %></span>
+            <h2><a href="<%- url_for(ps[i].path) %>"><%- ps[i].title || theme.unnamed %></a></h2>
+        </header>
+        <a href="<%- url_for(ps[i].path) %>" class="image fit">
+            <% if (ps[i].cover) { %>
+            <img src="<%- ps[i].cover %>" alt="" />
+            <% } %>
+        </a>
+        <p><%- ps[i].digest || ps[i].excerpt || '' %></p>
+        <ul class="actions">
+            <li><a href="<%- url_for(ps[i].path) %>" class="button">Full <%- ps[i].classify || 'article' %></a></li>
+        </ul>
+    </article>
+    <% } %>
+    <% if (ps.length % 2 == 0) { %>
+    <article class="end">
+        <p>(......)</p>
+    </article>
+    <% } %>
+</section>
+
+
+
+
+
+

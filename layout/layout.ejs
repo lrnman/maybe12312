@@ -1,0 +1,30 @@
+<%- partial('_partial/head') %>
+<body class="is-loading">
+ <div id="wrapper">
+  <!-- Intro -->
+  <% if (is_home()) {%>
+  <div id="intro">
+   <h1><%- theme['intro_h1'] %></h1>
+   <p><%- theme['intro_p'] %></p>
+   <ul class="actions">
+    <li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+   </ul>
+  </div>
+  <% } %>
+  <!-- Header -->
+  <%- partial('_partial/header') %>
+
+  <!-- Nav -->
+  <%- partial('_partial/nav') %>
+
+  <!-- Main -->
+  <div id="main">
+    <%- body %>
+  </div>
+
+  <!-- Nav -->
+  <%- partial('_partial/footer') %>
+ </div>
+ <%- js(theme.scripts) %>
+</body>
+</html>

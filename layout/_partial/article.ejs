@@ -1,0 +1,10 @@
+<!-- Post -->
+<section class="post">
+	<header class="major">
+		<span class="date"><%- post.date.format(theme.date_format)%></span>
+		<h1><%- post.title || theme.unnamed %></h1>
+	</header>
+	<%- post.content %>
+</section>
+
+<%- partial('_post/nav') %>

@@ -1,0 +1,20 @@
+<%
+ var keys = Object.keys(theme.menu);
+ %>
+
+<nav id="nav">
+    <ul class="links">
+        <li class="<%- is_home()? 'active':'' %>"><a href="/"><%- __(keys[0]) %></a></li>
+        <li class="<%- is_post()? 'active':'' %>"><a href="javascript:;" class="generic"><%- __(keys[1]) %></a></li>
+        <li class="<%- is_current(theme.menu[keys[2]])? 'active':'' %>"><a href="<%- url_for(theme.menu[keys[2]]) %>"><%- __(keys[2]) %></a></li>
+        <li><a href="<%- theme.menu[keys[3]] %>"><%- __(keys[3]) %></a></li>
+    </ul>
+    <ul class="icons">
+        <% for (icon in theme.icons) {
+            if (theme.icons[icon]) {
+                var names = icon.split('|');
+        %>
+            <li><a href="<%- theme.icons[icon] %>" target="_blank" class="icon fa-<%- names.length > 1 ? names[1] : names[0] %>"><span class="label"><%- names[0] %></span></a></li>
+        <% }} %>
+    </ul>
+</nav>

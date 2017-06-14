@@ -1,0 +1,49 @@
+# Header
+menu:
+  home: /
+  generic page:
+  tags: tags
+  me: me
+
+icons:
+#  |前的值会作为font awesome icon的名字， 如果| 后面有值，则是font awesome icon的名字。
+#  不赋值代表不启用那个icon
+  github: https://github.com/lrnman
+  weibo:
+  coding|code : https://coding.net/u/jerryy
+  twitter:
+  facebook:
+  instagram:
+
+#title
+unnamed: (unnamed)
+
+#layout text
+intro_h1: This is<br />Massively
+intro_p: A free, fully responsive HTML5 + CSS3 site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> for <a href="https://html5up.net">HTML5 UP</a><br />
+        						and released for free under the <a href="https://html5up.net/license">Creative Commons license</a>.
+
+#header text
+logo_text: Massively
+
+# Content
+fancybox: true
+
+# Miscellaneous
+google_analytics:
+favicon: /favicon.png
+
+# stylesheets loaded in the <head>
+stylesheets:
+- /css/main
+
+# scripts loaded in the end of the body
+scripts:
+- /js/jquery.min
+- /js/jquery.scrollex.min
+- /js/jquery.scrolly.min
+- /js/skel.min
+- /js/util
+- /js/main
+
+date_format: MM DD, YYYY
