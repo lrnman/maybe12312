@@ -1352,6 +1352,10 @@ sup {
   position: relative;
   top: -0.5rem; }
 
+cite {
+  font-style: italic;
+  color: #7f8387; }
+
 blockquote {
   border-left: solid 4px;
   font-style: italic;
@@ -1921,6 +1925,9 @@ a.image {
     -ms-transform: scale(1.05);
     transform: scale(1.05); }
 
+img.fit {
+  display: block;
+  width: 100%; }
 img.left {
   display: block;
   position: relative;

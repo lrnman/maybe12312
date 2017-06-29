@@ -110,6 +110,11 @@
 	}
 
 	img {
+		&.fit {
+			display : block;
+			width: 100%;
+		}
+
 		&.left {
 			display : block;
 			position: relative;
