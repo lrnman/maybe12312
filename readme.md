@@ -42,7 +42,7 @@ git clone git@github.com:lrnman/mayBe.git themes/mayBe
 3. 强调 ```**Strong text**```或 ```*Strong text*```
 4. 划线 ```<u>Underline text</u>``` ```~~Deleted text~~```
 5. 突出 ``` `Sed erat diam` ```
-6. 引用块 ``` > XXXXXXX```、``````
+6. 引用块 ``` > XXXXXXX```、更多请见[hexo官网tag-plugins](https://hexo.io/zh-cn/docs/tag-plugins.html)
 7. 列表 
  ```
  Ordered List (ol)
@@ -74,4 +74,4 @@ git clone git@github.com:lrnman/mayBe.git themes/mayBe
 <abbr title="Avenue">AVE</abbr>
 <cite>cite</cite>
 ```
-10. 标签插件（引用，代码块，etc）, 详情 [hexo官网](https://hexo.io/zh-cn/docs/tag-plugins.html)
+10. 标签插件（引用，代码块，etc）, 详情 [hexo官网tag-plugins](https://hexo.io/zh-cn/docs/tag-plugins.html)
