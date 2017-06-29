@@ -1,15 +1,9 @@
-@import 'libs/vars';
-@import 'libs/functions';
-@import 'libs/mixins';
-@import 'libs/skel';
-@import 'font-awesome.min.css';
-@import url('https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic|Source+Sans+Pro:900');
-
-/*
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+@import './libs/vars';
+@import './libs/functions';
+@import './libs/mixins';
+@import './libs/skel';
+@import './font-awesome.min.css';
+@import './fonts-from-google.css';
 
 	@include skel-breakpoints((
 		xlarge: '(max-width: 1680px)',
@@ -37,29 +31,39 @@
 		@include color-pagination($p);
 	}
 
+
 // Base.
 
-	@import 'base/page';
-	@import 'base/typography';
+	@import './base/page';
+	@import './base/typography';
+	@import './base/_variables';
 
 // Component.
 
-	@import 'components/box';
-	@import 'components/button';
-	@import 'components/form';
-	@import 'components/icon';
-	@import 'components/image';
-	@import 'components/list';
-	@import 'components/section';
-	@import 'components/table';
-	@import 'components/pagination';
+	@import './components/box';
+	@import './components/button';
+	@import './components/form';
+	@import './components/icon';
+	@import './components/image';
+	@import './components/list';
+	@import './components/section';
+	@import './components/table';
+	@import './components/pagination';
+	@import './components/tag';
+	@import './components/code';
+    @import './components/poptrox-popup';
+	@import './components/gallery';
+	@import './components/toc';
+	@import './components/banner';
 
 // Layout.
 
-	@import 'layout/wrapper';
-	@import 'layout/intro';
-	@import 'layout/header';
-	@import 'layout/nav';
-	@import 'layout/main';
-	@import 'layout/footer';
-	@import 'layout/navPanel';
+	@import './layout/wrapper';
+	@import './layout/intro';
+	@import './layout/header';
+	@import './layout/nav';
+	@import './layout/main';
+	@import './layout/footer';
+	@import './layout/navPanel';
+	@import './layout/tags';
+	@import './layout/article';

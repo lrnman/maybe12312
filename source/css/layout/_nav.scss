@@ -1,19 +1,14 @@
-///
-/// Massively by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
-
 /* Nav */
 
 	#nav {
 		@include color-list(invert);
 		@include color-typography(invert);
 		@include vendor('display', 'flex');
-		@include vendor('transition', (
-			'transform 1s ease',
-			'opacity 1s ease'
-		));
+		//@include vendor('transition', (
+		//	'transform 1s ease',
+		//	'opacity 1s ease'
+		//));
+		transition: all 1s ease, top .4s linear;
 		background: rgba(255,255,255,0.175);
 		height: 4rem;
 		line-height: 4rem;
@@ -23,7 +18,7 @@
 		position: relative;
 		width: calc(100% - #{_size(padding) * 2});
 		max-width: _size(wrapper);
-		z-index: 2;
+		z-index: 3;
 
 		ul {
 			&.links {
@@ -51,6 +46,7 @@
 						font-size: 0.8rem;
 						outline: none;
 						padding: 0 2rem;
+						border: 0;
 
 						&:not(.generic):hover {
 							color: inherit !important;
@@ -64,7 +60,7 @@
 						a {
 							color: _palette(invert, bg);
 
-							&:not(.generic):hover {
+							&:hover {
 								color: _palette(invert, accent) !important;
 							}
 						}
@@ -73,6 +69,10 @@
 					.generic {
 						cursor: default;
 					}
+
+					.generic:hover {
+						color: inherit !important;
+					}
 				}
 			}
 
@@ -80,10 +80,36 @@
 				@include vendor('flex-grow', '0');
 				@include vendor('flex-shrink', '0');
 				margin-bottom: 0;
+
+				.division {
+					height: 0.9rem;
+					border-left: solid 2px #868383 !important;
+				}
 			}
 		}
 
 		@include breakpoint(medium) {
 			display: none;
 		}
+
+		&.attach-top {
+			width: 100% !important;
+			max-width: 100% !important;
+			left: 0 !important;
+			position: fixed !important;
+			top: 4rem;
+			z-index: 100 !important;
+			background-color: rgba(65, 64, 64, 0.8) !important;
+
+			.active {
+				background-color: #f5f5f5 !important;
+			}
+		}
+
+		&.hide {
+			top: 0;
+		}
 	}
+
+
+

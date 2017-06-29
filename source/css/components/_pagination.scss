@@ -41,6 +41,7 @@
 		.next, .prev {
 			@include icon;
 			padding: 0 1.75rem;
+			float: left;
 
 			&:before {
 				display: inline-block;

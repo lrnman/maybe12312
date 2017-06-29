@@ -7,8 +7,13 @@
         } %>
         <%- paginator(options) %>
         <select name="" id="select_page">
-            <% for (var i=1; i <=page.total; i++) { %>
-            <option value="<%- '/'+config.pagination_dir+'/'+i %>" <%- i==page.current? 'selected' : '' %>>page <%- i %></option>
+            <% for (var i=1; i <=page.total; i++) {
+                var pageUrl = '/'+config.pagination_dir+'/'+i;
+                if (i == 1) {
+                    pageUrl = '/';
+                }
+            %>
+            <option value="<%- pageUrl %>" <%- i==page.current? 'selected' : '' %>><%- _p('page', i) %></option>
             <% } %>
         </select>
     </div>

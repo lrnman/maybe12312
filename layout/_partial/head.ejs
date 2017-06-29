@@ -7,12 +7,24 @@
   var title = page.title;
   if (is_current('tags/')){
     title = __('tags');
+  } else if (is_current('me/')){
+    title = __('me');
   }
   %>
+
   <title><%if (is_home()) {%><%= config.title %><% } else { %><%= title ? title.replace('<br />', ' ').substr(0, 10) : theme.unnamed %> - <%= config.title %> <% } %></title>
+
   <% if (theme.favicon){ %>
     <%- favicon_tag(theme.favicon) %>
   <% } %>
 
-  <%- css(theme.stylesheets) %>
+  <% if (!is_current('me/')) { %>
+    <%- theme.stylesheets ? css(theme.stylesheets): '' %>
+    <noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+  <%  } else { %>
+    <!--[if lte IE 8]><script src="/js/ie/html5shiv.js"></script><![endif]-->
+    <%- css(theme.stylesheets_of_me) %>
+    <!--[if lte IE 8]><link rel="stylesheet" href="/css/me/ie8.css" /><![endif]-->
+    <!--[if lte IE 9]><link rel="stylesheet" href="/css/me/ie9.css" /><![endif]-->
+  <% } %>
 </head>

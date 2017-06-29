@@ -1,35 +1,47 @@
 <%
    var ps = page.posts.toArray();
+   var i = 0;
 %>
 <!-- Featured Post -->
 <article class="post featured">
     <header class="major">
-        <span class="date"><%- ps[0].date.format(theme.date_format) %></span>
-
-        <h2><a href="<%- url_for(ps[0].path) %>"><%- ps[0].title || theme.unnamed %></a></h2>
-        <p><span><%- ps[0].digest || ps[0].excerpt || '' %></span></p>
+        <span class="date"><%- ps[i].date.format(theme.date_format) %></span>
+        <h2>
+            <% if (!ps[i].link) { %>
+                <a href="<%- url_for(ps[i].path) %>"><%- ps[i].title || theme.unnamed %></a>
+            <% } else { %>
+                <%- link_to(ps[i].link, ps[i].title || ps[i].link || theme.unnamed, {external: true}) %>
+            <% } %>
+        </h2>
+        <p><span><%- ps[i].digest || ps[i].excerpt || '' %></span></p>
     </header>
-    <a href="<%- url_for(ps[0].path) %>" class="image main">
-        <% if (ps[0].cover) { %>
-        <img src="<%- ps[0].cover %>" alt="" />
+    <a href="<%- url_for(ps[i].path) %>" class="image main">
+        <% if (ps[i].cover) { %>
+        <div class="img" style="background: url(<%- ps[i].cover %>); background-size: cover; background-position: center"></div>
         <% } %>
     </a>
     <ul class="actions">
-        <li><a href="<%- url_for(ps[0].path) %>" class="button big">Full <%- ps[0].classify || 'article' %></a></li>
+        <li><a href="<%- url_for(ps[i].path) %>" class="button big">Full <%- ps[i].classify || 'article' %></a></li>
     </ul>
 </article>
 
 <!-- Posts -->
 <section class="posts">
-    <%for (var i = 1; i < ps.length; i++) { %>
+    <%for (i++; i < ps.length; i++) { %>
     <article>
         <header>
             <span class="date"><%- ps[i].date.format(theme.date_format) %></span>
-            <h2><a href="<%- url_for(ps[i].path) %>"><%- ps[i].title || theme.unnamed %></a></h2>
+            <h2>
+                <% if (!ps[i].link) { %>
+                <a href="<%- url_for(ps[i].path) %>"><%- ps[i].title || theme.unnamed %></a>
+                <% } else { %>
+                <%- link_to(ps[i].link, ps[i].title || ps[i].link || theme.unnamed, {external: true}) %>
+                <% } %>
+            </h2>
         </header>
         <a href="<%- url_for(ps[i].path) %>" class="image fit">
             <% if (ps[i].cover) { %>
-            <img src="<%- ps[i].cover %>" alt="" />
+            <div class="img" style="background: url(<%- ps[i].cover %>); background-size: cover; background-position: center"></div>
             <% } %>
         </a>
         <p><%- ps[i].digest || ps[i].excerpt || '' %></p>
@@ -40,7 +52,7 @@
     <% } %>
     <% if (ps.length % 2 == 0) { %>
     <article class="end">
-        <p>(......)</p>
+        <p>(END)</p>
     </article>
     <% } %>
 </section>

@@ -1,8 +1,3 @@
-///
-/// Massively by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
 
 /* Nav Panel */
 
@@ -18,7 +13,7 @@
 		top: 0.75rem;
 		right: 0.75rem;
 		border: 0;
-		color: _palette(invert, fg-bold);
+		color: _palette(invert, fg-bold) !important;
 		font-family: _font(family-heading);
 		font-size: 0.9rem;
 		font-weight: _font(weight-heading);
@@ -35,7 +30,7 @@
 		&.alt {
 			background-color: transparentize(_palette(bg), 0.125);
 			box-shadow: 0 0.125rem 0.75rem 0 transparentize(_palette(invert, bg), 0.75);
-			color: _palette(fg-bold);
+			color: _palette(fg-bold) !important;
 
 			&:hover {
 				background-color: _palette(bg);
@@ -93,6 +88,27 @@
 				&:first-child {
 					border-top: 0;
 				}
+			}
+		}
+
+		.icons {
+			.go-back,
+			.go-catalog {
+				color: inherit;
+				i {
+					animation: back_arrow .8s infinite alternate ease-in-out;
+				}
+			}
+
+			.go-catalog {
+				i {
+					animation: catalog_icon .8s infinite alternate ease-in-out;
+				}
+			}
+
+			.division {
+				border-left: 2px solid #eeeeee;
+				height: 1.4rem;
 			}
 		}
 

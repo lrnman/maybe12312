@@ -7,8 +7,6 @@ next_page: 下一页
 prev: 上一篇
 next: 下一篇
 comment: 留言
-archive_a: 归档
-archive_b: 归档：%s
 page: 第 %d 页
 recent_posts: 最新文章
 newer: Newer
@@ -18,9 +16,16 @@ powered_by: Powered by
 rss_feed: RSS Feed
 category: Category
 tag: Tag
+design: 设计
+theming: 主题化
+powerby: 支持
+gallery: 这是画廊, 共%d张图片
+go_back: 上页
+catalog: 目录
+title: 标题
 
 #nav text
 home: 主页
 generic page: generic page
-me: 关于我
+me: 我
 tags: 标签

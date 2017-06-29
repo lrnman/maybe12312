@@ -1,47 +1,40 @@
 layout: false
 ---
+<%
+var keys = Object.keys(theme.menu);
+%>
 
-<!DOCTYPE HTML>
-<!--
-	Big Picture by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Big Picture by HTML5 UP</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
+<%- partial('_partial/head') %>
 	<body>
 
 		<!-- Header -->
 			<header id="header">
-				<h1>Big Picture</h1>
-				<nav>
+				<nav class="left">
+					<ul class="links">
+						<li><a href="/"><%- __(keys[0]) %></a></li>
+						<li class="r-hide"><a href="javascript:;" class="generic"><%- __(keys[1]) %></a></li>
+						<li class="r-hide"><a href="<%- url_for(theme.menu[keys[2]]) %>"><%- __(keys[2]) %></a></li>
+						<li class="active"><a href="<%- url_for(theme.menu[keys[3]]) %>"><%- __(keys[3]) %></a></li>
+					</ul>
+				</nav>
+				<nav class="right">
 					<ul>
-						<li><a href="#intro">Intro</a></li>
-						<li><a href="#one">What I Do</a></li>
-						<li><a href="#two">Who I Am</a></li>
-						<li><a href="#work">My Work</a></li>
-						<li><a href="#contact">Contact</a></li>
+						<li><a href="#intro"><%- theme.intro %></a><i class="fa fa-caret-up" aria-hidden="true"></i></li>
+						<li><a href="#one"><%- theme.what_i_do %></a><i class="fa fa-caret-up" aria-hidden="true"></i></li>
+						<li><a href="#two"><%- theme.who_i_am %></a><i class="fa fa-caret-up" aria-hidden="true"></i></li>
+						<li><a href="#work"><%- theme.my_work %></a><i class="fa fa-caret-up" aria-hidden="true"></i></li>
+						<li><a href="#contact"><%- theme.contact %></a><i class="fa fa-caret-up" aria-hidden="true"></i></li>
 					</ul>
 				</nav>
 			</header>
 
 		<!-- Intro -->
-			<section id="intro" class="main style1 dark fullscreen">
+			<section id="intro" class="lazy main style1 dark fullscreen" data-original="/images/intro.jpg">
 				<div class="content">
 					<header>
-						<h2>Hey.</h2>
+						<h2><%- theme.intro_text.h %></h2>
 					</header>
-					<p>Welcome to <strong>Big Picture</strong> a responsive site template designed
-					by <a href="https://html5up.net">HTML5 UP</a>, built on <a href="http://skel.io">Skel</a>,
-					and released for free under the <a href="https://html5up.net/license">Creative Commons Attribution license</a>.</p>
+					<p><%- theme.intro_text.p %></p>
 					<footer>
 						<a href="#one" class="button style2 down">More</a>
 					</footer>
@@ -49,27 +42,23 @@ layout: false
 			</section>
 
 		<!-- One -->
-			<section id="one" class="main style2 right dark fullscreen">
+			<section id="one" class="lazy main style2 right dark fullscreen" data-original="/images/one.jpg">
 				<div class="content box style2">
 					<header>
-						<h2>What I Do</h2>
+						<h2><%- theme.do_text.h %></h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					<p><%- theme.do_text.p %></p>
 				</div>
 				<a href="#two" class="button style2 down anchored">Next</a>
 			</section>
 
 		<!-- Two -->
-			<section id="two" class="main style2 left dark fullscreen">
+			<section id="two" class="lazy main style2 left dark fullscreen" data-original="/images/two.jpg">
 				<div class="content box style2">
 					<header>
-						<h2>Who I Am</h2>
+						<h2><%- theme.am_text.h %></h2>
 					</header>
-					<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
-					id varius justo euismod in. Curabitur egestas consectetur magna.</p>
+					<p><%- theme.am_text.p %></p>
 				</div>
 				<a href="#work" class="button style2 down anchored">Next</a>
 			</section>
@@ -78,32 +67,27 @@ layout: false
 			<section id="work" class="main style3 primary">
 				<div class="content">
 					<header>
-						<h2>My Work</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
-						Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis
-						arcu, id varius justo euismod in. Curabitur egestas consectetur magna vitae.</p>
+						<h2><%- theme.work_text.h %></h2>
+						<p><%- theme.work_text.p %></p>
 					</header>
 
 					<!-- Gallery  -->
 						<div class="gallery">
-							<article class="from-left">
-								<a href="images/fulls/01.jpg" class="image fit"><img src="images/thumbs/01.jpg" title="The Anonymous Red" alt="" /></a>
+
+							<%//true: left, false:right
+							var from = true;
+							for (var key in theme.work_imgs)  {
+							%>
+
+							<article class="from-<%- from ? 'left' : 'right' %>">
+								<a href="<%- theme.work_imgs[key][0] %>" class="image fit" style="background-image: url(<%- theme.work_imgs[key][1] %>); background-size: cover; background-position: center center" title="<%- theme.work_imgs[key][2] %>"><img  title="<%- theme.work_imgs[key][2] %>" alt=""></a>
 							</article>
-							<article class="from-right">
-								<a href="images/fulls/02.jpg" class="image fit"><img src="images/thumbs/02.jpg" title="Airchitecture II" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/03.jpg" class="image fit"><img src="images/thumbs/03.jpg" title="Air Lounge" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/04.jpg" class="image fit"><img src="images/thumbs/04.jpg" title="Carry on" alt="" /></a>
-							</article>
-							<article class="from-left">
-								<a href="images/fulls/05.jpg" class="image fit"><img src="images/thumbs/05.jpg" title="The sparkling shell" alt="" /></a>
-							</article>
-							<article class="from-right">
-								<a href="images/fulls/06.jpg" class="image fit"><img src="images/thumbs/06.jpg" title="Bent IX" alt="" /></a>
-							</article>
+
+							<%
+								from = !from;
+							}
+							%>
+							<div style="clear:both;"></div>
 						</div>
 
 				</div>
@@ -113,8 +97,8 @@ layout: false
 			<section id="contact" class="main style3 secondary">
 				<div class="content">
 					<header>
-						<h2>Say Hello.</h2>
-						<p>Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.</p>
+						<h2><%- theme.contact_text.h %></h2>
+						<p><%- theme.contact_text.p %></p>
 					</header>
 					<div class="box">
 						<form method="post" action="#">
@@ -134,30 +118,33 @@ layout: false
 
 				<!-- Icons -->
 					<ul class="actions">
-						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-						<li><a href="#" class="icon fa-linkedin"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
+                        <% for (icon in theme.icons) {
+						if (theme.icons[icon]) {
+							var names = icon.split('|');
+                        %>
+						<li><a href="<%- theme.icons[icon] %>" target="_blank" class="icon fa-<%- names.length > 1 ? names[1] : names[0] %>"><span class="label"><%- names[0] %></span></a></li>
+                        <% }} %>
 					</ul>
 
 				<!-- Menu -->
 					<ul class="menu">
-						<li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+						<li>&copy; <%- date(Date.now(), 'YYYY') %> <a href="https://c.55to.top" target="_blank" alt="廖建" title="廖建">JERRY</a></li>
+						<li><%- __('design') %>: <%- link_to('https://html5up.net', 'HTML5 UP', {external: true}) %></li>
+						<li><%- __('theming') %>: <a href="https://c.55to.top" target="_blank" alt="廖建" title="廖建">JERRY</a></li>
+						<li><%- __('powerby') %>: <%- link_to('https://hexo.io', 'Hexo', {external: true}) %></li>
 					</ul>
 
 			</footer>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.poptrox.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-			<script src="assets/js/main.js"></script>
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/jquery.poptrox.min.js"></script>
+			<script src="/js/jquery.scrolly.min.js"></script>
+			<script src="/js/jquery.scrollex.min.js"></script>
+			<script src="/js/skel.min.js"></script>
+			<script src="/js/util.js"></script>
+			<!--[if lte IE 8]><script src="/js/ie/respond.min.js"></script><![endif]-->
+			<script src="/js/me/main.js"></script>
 
 	</body>
 </html>

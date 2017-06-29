@@ -1,0 +1,14 @@
+<div class="gallery-box">
+    <h1><i class="fa fa-th-list" aria-hidden="true"></i> <%- _p('gallery', photos.length) %></h1>
+    <div class="gallery-wrapper" <% if (row) { %>style="padding-bottom: <%- (row*30+1.6) + '%' %>"<% } %>>
+        <div class="gallery">
+            <% for (var i in photos) { %>
+            <a href="<%- photos[i] %>" >
+                <div class="bg" style="background-image: url(<%- post.photos[i] %>);
+                        background-size: cover;
+                        background-position: center center;"></div>
+            </a>
+            <% } %>
+        </div>
+    </div>
+</div>

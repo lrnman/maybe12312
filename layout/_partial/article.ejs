@@ -1,10 +1,29 @@
+
 <!-- Post -->
-<section class="post">
+<section class="post read-post">
 	<header class="major">
 		<span class="date"><%- post.date.format(theme.date_format)%></span>
-		<h1><%- post.title || theme.unnamed %></h1>
+		<h1 id="title"><%- post.title || theme.unnamed %></h1>
 	</header>
-	<%- post.content %>
+    <%if(post.photos.length){ %>
+	<%- partial('_partial/gallery', {photos: post.photos, row: post.row}) %>
+	<%	} %>
+
+    <%- post.content %>
+
+	<% if (post.tags.length) { %>
+	<!-- 标签云 -->
+	<div id='tag_cloud' class="tags">
+		<i class="title fa fa-tag "></i>
+		<% post.tags.map(function(tag){  %>
+		<a href="/tags/#<%= tag.name %>" title="<%= tag.name %>" rel="<%= tag.length %>"><%= tag.name %></a>
+		<% }) %>
+	</div>
+	<% } %>
 </section>
 
 <%- partial('_post/nav') %>
+
+<% if (post.toc) { %>
+<%- partial('_post/toc', {content: post.content}) %>
+<% } %>

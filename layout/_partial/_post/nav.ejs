@@ -2,32 +2,32 @@
 <footer>
 <% if (post.prev || post.next){ %>
   <div class="pagination">
-  <% if (post.prev){ %>
-    <a href="<%- url_for(post.prev.path) %>" >
+  <% if (post.next){ %>
+    <a href="<%- url_for(post.next.path) %>" >
       <div class="prev">
         <strong><%= __('prev') %></strong>
-        <% if (post.prev.title){
-        var text = post.prev.title.replace('<br />', ' ').substr(0, 6);
-        text = text.length == post.prev.title.length ? text : text.trim()+'...';
+        <% if (post.next.title){
+          text = post.next.title.replace('<br />', ' ').substr(0, 6);
+          text = text.length == post.next.title.length ? text : text.trim()+'...';
         %>
-          <%=  text %>
+        <%=  text %>
         <% } else { %>
           (no title)
         <% } %>
       </div>
     </a>
   <% } %>
-  <% if (post.next){ %>
-    <a href="<%- url_for(post.next.path) %>">
+  <% if (post.prev){ %>
+    <a href="<%- url_for(post.prev.path) %>">
       <div class="next">
-          <% if (post.next.title){
-            text = post.next.title.replace('<br />', ' ').substr(0, 6);
-            text = text.length == post.next.title.length ? text : text.trim()+'...';
-          %>
-          <%= text %>
-          <% } else { %>
+        <% if (post.prev.title){
+          var text = post.prev.title.replace('<br />', ' ').substr(0, 6);
+          text = text.length == post.prev.title.length ? text : text.trim()+'...';
+        %>
+        <%= text %>
+        <% } else { %>
         (no title)
-          <% } %>
+        <% } %>
         <strong><%= __('next') %></strong>
       </div>
     </a>

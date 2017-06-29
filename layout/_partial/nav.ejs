@@ -1,15 +1,27 @@
 <%
  var keys = Object.keys(theme.menu);
- %>
+%>
 
 <nav id="nav">
     <ul class="links">
         <li class="<%- is_home()? 'active':'' %>"><a href="/"><%- __(keys[0]) %></a></li>
         <li class="<%- is_post()? 'active':'' %>"><a href="javascript:;" class="generic"><%- __(keys[1]) %></a></li>
         <li class="<%- is_current(theme.menu[keys[2]])? 'active':'' %>"><a href="<%- url_for(theme.menu[keys[2]]) %>"><%- __(keys[2]) %></a></li>
-        <li><a href="<%- theme.menu[keys[3]] %>"><%- __(keys[3]) %></a></li>
+        <li><a href="<%- url_for(theme.menu[keys[3]]) %>"><%- __(keys[3]) %></a></li>
     </ul>
     <ul class="icons">
+        <% if(is_current('tags/')) { %>
+        <li><a href="#top" class="go-top"><i class="fa fa-arrow-up"></i></a></li>
+        <% } %>
+        <% if(is_post()) { %>
+        <li><a href="javascript:history.back();" class="go-back"><i class="fa fa-arrow-left"></i><%- __('go_back') %></a></li>
+            <% if(page.toc) { %>
+                <li><a href="#toc_box" class="go-catalog"><i class="fa fa-list"></i> <%- __('catalog') %></a></li>
+            <% } %>
+        <% } %>
+        <% if(is_current('tags/') || is_post()) { %>
+        <li class="division"></li>
+        <% } %>
         <% for (icon in theme.icons) {
             if (theme.icons[icon]) {
                 var names = icon.split('|');

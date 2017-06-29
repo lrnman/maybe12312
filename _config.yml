@@ -15,8 +15,14 @@ icons:
   facebook:
   instagram:
 
-#title
+# 未命名文章名字
 unnamed: (unnamed)
+
+#banner
+banner_who: Jerry
+banner_thumbs: ../images/banner.jpg
+banner_video: https://pixelarity.com/items/demos/formula/cyan/images/banner.mp4
+banner_h1: '" fight forever'
 
 #layout text
 intro_h1: This is<br />Massively
@@ -26,24 +32,100 @@ intro_p: A free, fully responsive HTML5 + CSS3 site template designed by <a href
 #header text
 logo_text: Massively
 
-# Content
-fancybox: true
-
 # Miscellaneous
-google_analytics:
 favicon: /favicon.png
 
 # stylesheets loaded in the <head>
 stylesheets:
 - /css/main
 
+stylesheets_of_me:
+- /css/me/main
+
+
 # scripts loaded in the end of the body
 scripts:
 - /js/jquery.min
+#- /js/jquery.lazyload.min
+- /js/jquery.poptrox.min
 - /js/jquery.scrollex.min
 - /js/jquery.scrolly.min
 - /js/skel.min
 - /js/util
 - /js/main
 
+# 文章展示时间格式
 date_format: MM DD, YYYY
+
+#me page right nav
+intro: Intro
+what_i_do: What I Do
+who_i_am: Who I Am
+my_work: My Work
+contact: Contact
+
+#me main
+#intro
+intro_text:
+  h: Hey.
+  p: Welcome to <strong>Big Picture</strong> a responsive site template designed
+      					by <a href="https://html5up.net">HTML5 UP</a>, built on <a href="http://skel.io">Skel</a>,
+      					and released for free under the <a href="https://html5up.net/license">Creative Commons Attribution license</a>.
+
+#do
+do_text:
+  h: What I Do
+  p: Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+     					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
+     					id varius justo euismod in. Curabitur egestas consectetur magna.
+
+#am
+am_text:
+  h: Who I Am
+  p: Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+     					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
+     					id varius justo euismod in. Curabitur egestas consectetur magna.
+
+#am
+work_text:
+  h: My Work
+  p: Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+     					Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu,
+     					id varius justo euismod in. Curabitur egestas consectetur magna.
+
+#urls of work images
+# 1、大图
+# 2、缩略图
+# 3、描述
+work_imgs:
+  p1:
+  - /images/fulls/01.jpg
+  - /images/thumbs/01.jpg
+  - Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+  p2:
+  - /images/fulls/02.jpg
+  - /images/thumbs/02.jpg
+  - amet et sapien sed elementum egestas dolore condimentum.
+  p3:
+  - /images/fulls/03.jpg
+  - /images/thumbs/03.jpg
+  - Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, id varius justo euismod in. Curabitur egestas consectetur magna.
+  p4:
+  - /images/fulls/04.jpg
+  - /images/thumbs/04.jpg
+  - egestas dolore
+  p5:
+  - /images/fulls/05.jpg
+  - /images/thumbs/05.jpg
+  - Fusce blandit
+  p6:
+  - /images/fulls/06.jpg
+  - /images/thumbs/06.jpg
+  - blandit ultrices sapien
+
+
+
+#contact
+contact_text:
+  h: Say Hello.
+  p: Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
