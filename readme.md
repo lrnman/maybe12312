@@ -3,7 +3,7 @@
 ```
 git clone git@github.com:lrnman/mayBe.git themes/mayBe
 ```
-2. 下载[环境]()，包括source文件夹，和scaffolds文件夹，并覆盖到你的项目里。
+2. 下载[环境](https://github.com/lrnman/mayBe-dev)，包括source文件夹，和scaffolds文件夹，并覆盖到你的项目里。
 3. 修改项目_config.yml文件的 ''' per_page: 5 ''' ,  ''' theme: mayBe '''
 
 ## 主题
