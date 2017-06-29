@@ -12,6 +12,9 @@ git clone git@github.com:lrnman/mayBe.git themes/mayBe
 3. 支持代码高亮
 4. 支持多语言
 
+- 使用sass
+- 使用ejs
+
 ### 主题属性
 详情见主题_config.yml文件
 
