@@ -340,8 +340,9 @@
 
             //发送
             $.ajax({
+                type: "get",
                 url: action+'?name='+ $name.val()+'&email='+ $email.val()+ '&message='+$msg.val() +'&jcb=?',
-                dataType:'jsonp',
+                dataType: 'jsonp',
                 success: function(message) {
                     $actions.removeClass('loading');
                     if(message.status == 1) {
@@ -362,7 +363,7 @@
 
                     $submit.val('发送失败，请稍后重试');
                 },
-                timeout: 30000
+                timeout: 5000
             });
 
             //阻止表单默认行为
