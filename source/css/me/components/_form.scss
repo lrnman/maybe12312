@@ -25,6 +25,43 @@
 
 		> .actions {
 			margin: (_size(element-margin) * 0.75) 0 0 0 !important;
+
+			&.loading::after {
+				content: '';
+				display: inline-block;
+				background-image: url(./images/loading.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				width: 26px;
+				height: 26px;
+				position: absolute;
+				animation: loading-ic .6s linear infinite;
+			}
+
+			@keyframes loading-ic {
+				0% {}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			input[type="submit"] {
+				transition: all .8s;
+			}
+
+			input[type="submit"].loading {
+				background-color: #929392;
+				cursor: default;
+
+				&:hover {
+					background-color: #929392 !important;
+				}
+			}
+
+			.report {
+				position: absolute;
+				display: none;
+			}
 		}
 
 		@include breakpoint(small) {

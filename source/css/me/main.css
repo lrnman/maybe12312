@@ -536,6 +536,29 @@ form {
         padding: 0 0.75em 0 0; }
   form > .actions {
     margin: 1.5em 0 0 0 !important; }
+    form > .actions.loading::after {
+      content: '';
+      display: inline-block;
+      background-image: url(./images/loading.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 26px;
+      height: 26px;
+      position: absolute;
+      animation: loading-ic .6s linear infinite; }
+@keyframes loading-ic {
+  100% {
+    transform: rotate(360deg); } }
+    form > .actions input[type="submit"] {
+      transition: all .8s; }
+    form > .actions input[type="submit"].loading {
+      background-color: #929392;
+      cursor: default; }
+      form > .actions input[type="submit"].loading:hover {
+        background-color: #929392 !important; }
+    form > .actions .report {
+      position: absolute;
+      display: none; }
   @media screen and (max-width: 736px) {
     form .field {
       margin: 0 0 1em 0; }

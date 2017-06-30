@@ -325,5 +325,48 @@
             }
         });
 
+        //发送邮件
+        var $form = $('form');
+        var $name = $('form input[name=name]');
+        var $email = $('form input[name=email]');
+        var $msg = $('form textarea[name=message]');
+        var $submit = $('form :submit');
+        var action = $('form').prop('action');
+        var $actions = $('form .actions');
+        $form.on('submit', function () {
+            //发送时的界面效果
+            $actions.add($submit).addClass('loading');
+            $submit.prop('disabled', true);
+
+            //发送
+            $.ajax({
+                url: action+'?name='+ $name.val()+'&email='+ $email.val()+ '&message='+$msg.val() +'&jcb=?',
+                dataType:'jsonp',
+                success: function(message) {
+                    $actions.removeClass('loading');
+                    if(message.status == 1) {
+                        setTimeout(function () {
+                            $submit.prop('disabled', false).removeClass('loading');
+                        }, 3000);
+                        $submit.val('我已收到，感谢你的来信');
+                    } else{
+                        $submit.val('服务器错误，请稍后重试');
+                        $('form .report').fadeIn();
+                    }
+                },
+                error: function () {
+                    $actions.removeClass('loading');
+                    setTimeout(function () {
+                        $submit.prop('disabled', false).removeClass('loading');
+                    }, 3000);
+
+                    $submit.val('发送失败，请稍后重试');
+                },
+                timeout: 30000
+            });
+
+            //阻止表单默认行为
+            return false;
+        });
     });
 })(jQuery);
