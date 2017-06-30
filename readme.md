@@ -11,6 +11,7 @@ git clone git@github.com:lrnman/mayBe.git themes/mayBe
 2. 支持画廊
 3. 支持代码高亮
 4. 支持多语言
+5. 支持ajax发送留言（me页）
 
 - 使用sass
 - 使用ejs
