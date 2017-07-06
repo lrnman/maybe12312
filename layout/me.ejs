@@ -5,7 +5,7 @@ var keys = Object.keys(theme.menu);
 %>
 
 <%- partial('_partial/head') %>
-	<body>
+	<body class="is-loading">
 
 		<!-- Header -->
 			<header id="header">
@@ -80,7 +80,7 @@ var keys = Object.keys(theme.menu);
 							%>
 
 							<article class="from-<%- from ? 'left' : 'right' %>">
-								<a href="<%- theme.work_imgs[key][0] %>" class="image fit" style="background-image: url(<%- theme.work_imgs[key][1] %>); background-size: cover; background-position: center center" title="<%- theme.work_imgs[key][2] %>"><img  title="<%- theme.work_imgs[key][2] %>" alt=""></a>
+								<a href="<%- theme.work_imgs[key][0] %>" data-poptrox="<%- theme.work_imgs[key][3] %>" class="image fit" style="background-image: url(<%- theme.work_imgs[key][1] %>); background-size: cover; background-position: center center" title="<%- theme.work_imgs[key][2] %>"><img  title="<%- theme.work_imgs[key][2] %>" alt=""></a>
 							</article>
 
 							<%
@@ -106,7 +106,7 @@ var keys = Object.keys(theme.menu);
 							<div class="field half"><input type="email" name="email" placeholder="Email" required /></div>
 							<div class="field"><textarea name="message" placeholder="Message" rows="6" required></textarea></div>
 							<ul class="actions">
-								<li><input type="submit" value="Send Message" /> <span class="report" style="display: none;"> <a href="mailto:1600136170@qq.com">报告错误</a></span></li>
+								<li><input type="submit" value="&ensp;&ensp;Leave&ensp;It&ensp;&ensp;" /> <span class="report" style="display: none;"> <a href="mailto:1600136170@qq.com">报告错误</a></span></li>
 							</ul>
 						</form>
 					</div>
@@ -130,7 +130,7 @@ var keys = Object.keys(theme.menu);
 					<ul class="menu">
 						<li>&copy; <%- date(Date.now(), 'YYYY') %> <a href="https://c.55to.top" target="_blank" alt="廖建" title="廖建">JERRY</a></li>
 						<li><%- __('design') %>: <%- link_to('https://html5up.net', 'HTML5 UP', {external: true}) %></li>
-						<li><%- __('theming') %>: <a href="https://c.55to.top" target="_blank" alt="廖建" title="廖建">JERRY</a></li>
+						<li><%- __('theming') %>: <a href="https://github.com/lrnman/mayBe" target="_blank" alt="廖建" title="廖建">JERRY</a></li>
 						<li><%- __('powerby') %>: <%- link_to('https://hexo.io', 'Hexo', {external: true}) %></li>
 					</ul>
 

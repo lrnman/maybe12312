@@ -97,31 +97,38 @@ work_text:
 # 1、大图
 # 2、缩略图
 # 3、描述
+# 4、data-poptrox
 work_imgs:
   p1:
   - /images/fulls/01.jpg
   - /images/thumbs/01.jpg
   - Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum.
+  -
   p2:
   - /images/fulls/02.jpg
   - /images/thumbs/02.jpg
   - amet et sapien sed elementum egestas dolore condimentum.
+  -
   p3:
   - /images/fulls/03.jpg
   - /images/thumbs/03.jpg
   - Lorem ipsum dolor sit amet et sapien sed elementum egestas dolore condimentum. Fusce blandit ultrices sapien, in accumsan orci rhoncus eu. Sed sodales venenatis arcu, id varius justo euismod in. Curabitur egestas consectetur magna.
+  -
   p4:
   - /images/fulls/04.jpg
   - /images/thumbs/04.jpg
   - egestas dolore
+  -
   p5:
   - /images/fulls/05.jpg
   - /images/thumbs/05.jpg
   - Fusce blandit
+  -
   p6:
   - /images/fulls/06.jpg
   - /images/thumbs/06.jpg
   - blandit ultrices sapien
+  -
 
 
 

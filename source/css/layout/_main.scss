@@ -44,12 +44,16 @@
 						margin: 0 0 _size(element-margin) 0;
 					}
 
-					>p {
+					>.outer {
 						display: flex;
 						justify-content: center;
 
-						span {
+						.inner {
 							max-width: 600px
+						}
+
+						.inner p {
+							display: inline;
 						}
 					}
 				}
@@ -127,10 +131,12 @@
 			}
 
 			.end {
-				display: flex;
-				justify-content: center;
+				@include vendor('user-select', 'none');
+				cursor: default;
+				@include vendor('display', 'flex');
+				@include vendor('justify-content', 'center');
 				p {
-					align-self: center;
+					@include vendor('align-self', 'center');
 				}
 			}
 

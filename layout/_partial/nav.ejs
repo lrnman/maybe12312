@@ -26,7 +26,7 @@
             if (theme.icons[icon]) {
                 var names = icon.split('|');
         %>
-            <li><a href="<%- theme.icons[icon] %>" target="_blank" class="icon fa-<%- names.length > 1 ? names[1] : names[0] %>"><span class="label"><%- names[0] %></span></a></li>
+            <li><a href="<%- theme.icons[icon] %>" target="_blank" class="icon fa fa-<%- names.length > 1 ? names[1] : names[0] %>"><span class="label"><%- names[0] %></span></a></li>
         <% }} %>
     </ul>
 </nav>
