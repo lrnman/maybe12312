@@ -65,6 +65,9 @@ my_work: My Work
 contact: Contact
 
 #me main
+
+msg_server_url: https://api.55to.top/email
+
 #intro
 intro_text:
   h: Hey.
